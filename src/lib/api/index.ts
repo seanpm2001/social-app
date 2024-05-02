@@ -290,8 +290,9 @@ async function createThreadgate(
   }
 
   const postUrip = new AtUri(postUri)
+  const did = await agent.getDid()
   await agent.api.app.bsky.feed.threadgate.create(
-    {repo: agent.session!.did, rkey: postUrip.rkey},
+    {repo: did, rkey: postUrip.rkey},
     {post: postUri, createdAt: new Date().toISOString(), allow},
   )
 }
