@@ -866,7 +866,7 @@ export function SettingsScreen({}: Props) {
             onPress={onPressBuildInfo}>
             <Text type="sm" style={[styles.buildInfo, pal.textLight]}>
               <Trans>
-                Version {appVersion} {bundleInfo} - TESTING OTA
+                Version {appVersion} {bundleInfo}
               </Trans>
             </Text>
           </TouchableOpacity>
