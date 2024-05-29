@@ -41,6 +41,8 @@ let MessageItem = ({
 
   const isNextFromSameSender = isNextFromSelf === isFromSelf
 
+  const needsTail = !nextIsMessage || !isNextFromSameSender
+
   const isNewDay = useMemo(() => {
     // TODO: figure out how we can show this for when we're at the start
     // of the conversation
@@ -110,8 +112,8 @@ let MessageItem = ({
                 borderRadius: 17,
               },
               isFromSelf
-                ? {borderBottomRightRadius: isLastInGroup ? 2 : 17}
-                : {borderBottomLeftRadius: isLastInGroup ? 2 : 17},
+                ? {borderBottomRightRadius: needsTail ? 2 : 17}
+                : {borderBottomLeftRadius: needsTail ? 2 : 17},
             ]}>
             <RichText
               value={rt}
