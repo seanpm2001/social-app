@@ -60,13 +60,6 @@ export interface DeleteAccountModal {
   name: 'delete-account'
 }
 
-export interface SelfLabelModal {
-  name: 'self-label'
-  labels: string[]
-  hasMedia: boolean
-  onChange: (labels: string[]) => void
-}
-
 export interface ThreadgateModal {
   name: 'threadgate'
   settings: ThreadgateSetting[]
@@ -147,7 +140,6 @@ export type Modal =
   | AltTextImageModal
   | CropImageModal
   | EditImageModal
-  | SelfLabelModal
   | ThreadgateModal
 
   // Bluesky access
